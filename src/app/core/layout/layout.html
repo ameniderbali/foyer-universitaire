@@ -1,0 +1,36 @@
+&nbsp;&nbsp;
+<ul class="nav nav-tabs">
+	&nbsp;&nbsp;
+  <li class="nav-item">
+    <a class="nav-link" routerLink="chambre" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Chambre</a>
+  </li>
+  &nbsp;&nbsp;
+    <li class="nav-item" >
+    <a class="nav-link" [routerLink]="'bloc'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Bloc</a>
+  </li>
+  &nbsp;&nbsp;
+  <li class="nav-item" >
+    <a class="nav-link" [routerLink]="'foyer'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Foyer</a>
+  </li>
+  &nbsp;&nbsp;
+  <li class="nav-item" >
+    <a class="nav-link" [routerLink]="'etudiant'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Etudiant</a>
+  </li>
+  &nbsp;&nbsp;
+  <li class="nav-item" >
+    <a class="nav-link" [routerLink]="'reservation'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Reservation</a>
+  </li>
+  &nbsp;&nbsp;
+  <li class="nav-item" >
+    <a class="nav-link" [routerLink]="'universite'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Université</a>
+  </li>
+  &nbsp;&nbsp;
+    <li class="nav-item ms-auto">
+    <button class="btn btn-outline-danger" >
+      Logout
+    </button>
+  </li>
+  &nbsp;&nbsp;
+</ul>
+&nbsp;&nbsp;
+<router-outlet></router-outlet>

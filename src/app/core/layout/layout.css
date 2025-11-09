@@ -1,0 +1,46 @@
+
+.nav-tabs {
+  background-color:rgb(181, 186, 238);
+  
+}
+.nav-link {
+  color: #555;
+  background-color: rgb(165, 241, 217);
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect (optional) */
+.nav-link:hover {
+	width: 90%;
+	border: 5;
+  background-color: #c4ecdf;
+}
+
+/* Active tab style */
+.nav-link.active {
+  color: rgb(0, 0, 0);                /* text color when active */
+  background-color: rgb(149, 200, 255);  /* blue background (Bootstrap primary color) */
+  font-weight: bold;
+
+}
+
+.logout {
+  margin-left: auto; /* pushes logout button to the right */
+  }
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: rgb(255, 255, 255);
+}
