@@ -32,10 +32,20 @@ export class Chambre {
   getAllChambres() {
     this.chambreService.getAllChambres().subscribe(
       (result: any) => {
-        this.chambreList = result; // If successful, assign the data to chambreList
+        const chambres = Array.isArray(result)
+          ? result
+          : result?.data ?? result?.content ?? result?.chambres ?? [];
+
+        this.chambreList = chambres.map((chambre: any) => ({
+          idChambre: chambre.idChambre ?? chambre.id_chambre,
+          numeroChambre: chambre.numeroChambre ?? chambre.numero_chambre,
+          typeC: chambre.typeC ?? chambre.typec ?? chambre.type_c,
+        }));
       },
       (error) => {
-        alert("There was an error loading the chambre data."); // Set an error message if request fails
+        console.error("Erreur lors du chargement des chambres:", error);
+        this.chambreList = [];
+        this.toastr.error("Impossible de charger les chambres. Vérifiez que l'API est démarrée.");
       }
     );
   }
@@ -129,16 +139,17 @@ export class Chambre {
   onSave(action: string) {
     this.chambreModelData = {
       ...this.chambreModelData,
-      ...this.chambreForm.value,
+      ...this.chambreForm.getRawValue(),
     };
     if (action == "new") {
-      this.chambreService.onSaveNewChambre(this.chambreModelData).subscribe(
+      const { idChambre, ...newChambre } = this.chambreModelData;
+      this.chambreService.onSaveNewChambre(newChambre).subscribe(
         (result: any) => {
-          this.chambreModelData = result.data;
+          this.chambreModelData = result?.data ?? result;
           this.closePanel();
           this.getAllChambres();
           this.toastr.success(
-            "Chambre Data has been created(" + result.data.idChambre + ")"
+            "Chambre créée avec succès!"
           );
         },
         (error) => {
@@ -148,7 +159,7 @@ export class Chambre {
     } else if (action == "update") {
       this.chambreService.onUpdateChambre(this.chambreModelData).subscribe(
         (result: any) => {
-          this.chambreModelData = result.data;
+          this.chambreModelData = result?.data ?? result;
           this.closePanel();
           this.getAllChambres();
           this.toastr.success(

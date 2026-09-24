@@ -129,16 +129,17 @@ export class Bloc {
 	onSave(action: string) {
 	  this.blocModelData = {
 	    ...this.blocModelData,
-	    ...this.blocForm.value,
+	    ...this.blocForm.getRawValue(),
 	  };
 	  if (action == "new") {
-	    this.blocService.onSaveNewBloc(this.blocModelData).subscribe(
+	    const { idBloc, ...newBloc } = this.blocModelData;
+	    this.blocService.onSaveNewBloc(newBloc).subscribe(
 	      (result: any) => {
-	        this.blocModelData = result.data;
+	        this.blocModelData = result?.data ?? result;
 	        this.closePanel();
 	        this.getAllBlocs();
 	        this.toastr.success(
-	          "Bloc Data has been created(" + result.data.idBloc + ")"
+	          "Bloc créé avec succès!"
 	        );
 	      },
 	      (error) => {
@@ -148,7 +149,7 @@ export class Bloc {
 	  } else if (action == "update") {
 	    this.blocService.onUpdateBloc(this.blocModelData).subscribe(
 	      (result: any) => {
-	        this.blocModelData = result.data;
+	        this.blocModelData = result?.data ?? result;
 	        this.closePanel();
 	        this.getAllBlocs();
 	        this.toastr.success(

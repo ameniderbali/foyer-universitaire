@@ -1,0 +1,136 @@
+.foyer-list-title {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: rgb(185, 225, 255);
+}
+
+.div-create {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.foyer-list-table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 8px;
+  letter-spacing: 3px;
+}
+
+.btn-create {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 650;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: rgb(143, 248, 196);
+  border: none;
+  padding: 6px;
+}
+
+.btn-edit {
+  width: 40%;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 650;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: rgb(143, 248, 196);
+  border: none;
+  padding: 6px;
+}
+
+.btn-delete {
+  width: 40%;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 650;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: rgb(255, 128, 128);
+  border: none;
+  padding: 6px;
+}
+
+.foyer-form-title {
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #2b134b;
+  background: rgb(143, 248, 196);
+  padding: 8px;
+}
+
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -35%;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.form-button button {
+  padding: 10px 20px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.side-panel.open {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
