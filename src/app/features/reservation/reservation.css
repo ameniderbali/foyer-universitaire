@@ -1,0 +1,23 @@
+:host { display: block; min-height: calc(100vh - 64px); background: #f4f7fb; }
+.page { width: 90%; max-width: none; margin: 0 auto; padding: 1.5rem 0; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .45rem; }
+.heading h2 { flex: 1; margin: 0; padding: .2rem; border-radius: 8px; color: #2b134b; background: rgb(185, 225, 255); text-align: center; text-transform: uppercase; font-size: 1.1rem; font-weight: 800; letter-spacing: 3px; }
+button { border: 0; border-radius: 6px; padding: .55rem .9rem; color: #2b134b; background: rgb(143, 248, 196); font-weight: 650; letter-spacing: 2px; cursor: pointer; }
+button:hover { background: #12556b; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.table { width: 100%; margin-top: 0; border-collapse: collapse; background: #fff; box-shadow: 0 8px 24px rgba(23, 50, 77, .08); }
+.table th { color: #111; background: rgb(165, 184, 248); font-weight: 800; letter-spacing: 3px; text-align: center; }
+.table th, .table td { padding: .55rem 1rem; border: 1px solid #dbe5ec; text-align: center; letter-spacing: 2px; }
+.table tbody tr:nth-child(even) { background: #f8fbfd; }
+.table tbody tr:hover { background: #e7f3f5; }
+.table td:last-child button { width: 42%; margin: .1rem; }
+.form-grid { display: grid; gap: 1rem; max-width: 42rem; margin-top: 1.5rem; padding: 1.5rem; border: 1px solid #dbe5ec; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgba(23, 50, 77, .08); }
+.form-grid label { display: grid; gap: .4rem; color: #17324d; font-weight: 600; }
+.form-grid input:not([type="checkbox"]) { width: 100%; box-sizing: border-box; padding: .65rem .75rem; border: 1px solid #b9cbd6; border-radius: 5px; font: inherit; }
+.form-grid input:focus { outline: 2px solid #8bd3dc; border-color: #176b87; }
+.form-grid fieldset { display: grid; gap: .5rem; padding: 1rem; border: 1px solid #dbe5ec; border-radius: 6px; }
+.form-grid fieldset label { display: flex; align-items: center; gap: .5rem; font-weight: 400; }
+.form-grid div { display: flex; gap: .6rem; }
+.form-grid div button[type="button"] { color: #17324d; background: #e5edf2; }
+.error { color: #b42318; font-weight: 600; }
+@media (max-width: 700px) { .page { width: 96%; overflow-x: auto; } .table { min-width: 700px; } }
